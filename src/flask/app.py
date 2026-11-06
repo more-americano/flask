@@ -70,6 +70,7 @@ T_template_test = t.TypeVar("T_template_test", bound=ft.TemplateTestCallable)
 
 
 def _make_timedelta(value: timedelta | int | None) -> timedelta | None:
+    # d2 function body test
     if value is None or isinstance(value, timedelta):
         return value
 
