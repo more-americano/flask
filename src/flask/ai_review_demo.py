@@ -3,5 +3,4 @@
 import sqlite3
 
 def find_user_by_name(conn: sqlite3.Connection, name: str) -> list[tuple]:
-    sql = f"SELECT id, name FROM users WHERE name = '{name}'"
-    return conn.execute(sql).fetchall()
+    return conn.execute("SELECT id, name FROM users WHERE name = ?", (name,)).fetchall()
